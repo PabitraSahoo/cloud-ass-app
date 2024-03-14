@@ -10,10 +10,13 @@ html(lang='en')
   body
     header(class='bg-dark py-4 mb-4 text-light text-center')
       .container
-        img(src='/images/logo.jpg', alt='Company Logo', class='img-fluid mb-3', width='200')
-        h1(class='display-3 fw-bold mb-0') ELL 887
-        h2(class='fw-bold mb-3') Cloud Computing
-        p(class='lead mb-0') Assignment 2 - Azure Webapp
+        .row.align-items-center
+          .col-md-6.text-md-end
+            img(src='/images/logo.jpg', alt='Company Logo', class='img-fluid mb-3', width='200')
+          .col-md-6.text-md-start
+            h1(class='display-3 fw-bold mb-0') ELL 887
+            h2(class='fw-bold mb-3') Cloud Computing
+            p(class='lead mb-0') Assignment 2 - Azure Webapp
 
     main(class='container')
       block content
