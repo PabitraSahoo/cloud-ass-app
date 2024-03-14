@@ -34,7 +34,7 @@ router.post('/addTask', function(req, res, next) {
     pID: pID,
     description: description,
     catagory: catagory,
-    price: price
+    price: pr
   });
   console.log(`Adding a new task ${taskName} - createDate ${createDate}`)
 
