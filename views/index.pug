@@ -5,8 +5,14 @@ block content
   form(action='./addTask' method='POST' class='form-registration')
     .row.my-3
       .col-md-12.text-center
-        //label(for="taskName" class='fs-5 mb-2') Product Database
-        <label for="taskName" style="font-size: 20px;">Product Management</label>
+        //- Add new lines before "Product Management"
+        br
+        br
+        // Increase font size of "Product Management"
+        <label for="taskName" style="font-size: 30px;">Product Management System</label>
+        //- Add new line after "Product Management"
+        br
+        br
         input.form-control.form-control-lg(type="text", name='taskName', placeholder="Enter the new Product Name here" )
         input.form-control.form-control-lg(type="text", name='pID', placeholder="Enter the Product ID here" )
         input.form-control.form-control-lg(type="text", name='description', placeholder="Enter Product details here" )
@@ -15,9 +21,11 @@ block content
         input.form-control.form-control-lg(type="text", name='manuf', placeholder="Enter the Product Manufacturer here" )
         button.btn.btn-primary.btn-lg.mt-3(type='submit') Add Product
 
-
   //- Listing all Products
+  //- Add new line before "All Products"
+  br
   h5(class='my-4 text-center') All Products
+
 
   .table-responsive
     table.table.table-striped.table-hover
