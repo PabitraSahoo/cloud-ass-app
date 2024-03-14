@@ -12,19 +12,19 @@ block content
         button(class='btn btn-success btn-sm' type='submit') Add Product
 
   //- Listing all Products
-  h5(class='my-2') Products
+  h5(class='my-2') All Products
 
   div(class='row mb-3 border-bottom border-3')
     div(class='col-md-6 fw-bold') Product
     div(class='col-md-2 fw-bold') Added On
-    div(class='col-md-4 fw-bold') Action
+    div(class='col-md-4 fw-bold')
 
   each task in currentTasks
     div(class='row mb-2')
       div(class='col-sm-6') #{task.taskName}
-      div(class='col-sm-2') #{format(task.createDate, "yyyy-MM-dd")}
+      div(class='col-sm-2') #{format(task.createDate, "yyyy-MM-dd HH:mm:ss")} 
       div(class='col-sm-4')
         //- Form for Deleting Task
         form(action='./deleteTask' method='POST' class='form-registration')
           input(type='hidden' name='_id' value=`${task._id}`)
-          button(class='btn btn-danger btn-sm mx-1') Delete
+          button(class='btn btn-danger btn-sm mx-1') Remove
