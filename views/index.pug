@@ -11,7 +11,7 @@ block content
         input.form-control.form-control-lg(type="text", name='description', placeholder="Enter Product details here" )
         input.form-control.form-control-lg(type="text", name='price', placeholder="Enter the Product price here" )
         input.form-control.form-control-lg(type="text", name='catagory', placeholder="Enter Product catagory here" )
-        //button.btn.btn-success.btn-lg.mt-3(type='submit') Add Product
+        input.form-control.form-control-lg(type="text", name='manuf', placeholder="Enter the Product Manufacturer here" )
         button.btn.btn-primary.btn-lg.mt-3(type='submit') Add Product
 
 
@@ -24,23 +24,24 @@ block content
         tr
           th(class='fw-bold') Product ID
           th(class='fw-bold') Product
-          th(class='fw-bold') Added On
           th(class='fw-bold') Price 
-          th(class='fw-bold') Description
+          th(class='fw-bold') Manufacturer
           th(class='fw-bold') Catagory
+          th(class='fw-bold') Description
+          th(class='fw-bold') Added at
           th(class='fw-bold') -
       tbody
         each task in currentTasks
           tr
             td #{task.pID}
             td #{task.taskName}
-            td #{format(task.createDate, "yyyy-MM-dd HH:mm:ss")}
             td #{task.price}
-            td #{task.description}
+            td #{task.manuf}
             td #{task.catagory}
+            td #{task.description}
+            td #{format(task.createDate, "yyyy-MM-dd HH:mm:ss")}
             td
               form(action='./deleteTask' method='POST' class='form-registration')
                 input(type='hidden' name='_id' value=task._id)
-                //button.btn.btn-danger.btn-sm(type='submit') Remove
                 button.btn.btn-primary.btn-sm(type='submit') Remove Entry
 

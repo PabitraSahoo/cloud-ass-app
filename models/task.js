@@ -20,6 +20,10 @@ const taskSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
+  manuf: {
+    type: String,
+    trim: true,
+  },
   pID: {
     type: String,
     trim: true,
