@@ -7,7 +7,7 @@ block content
       .col-md-12.text-center
         label(for="taskName" class='fs-5 mb-2') Product Management System
         input.form-control.form-control-lg(type="text", name='taskName', placeholder="Enter new Product here" )
-        button.btn.btn-primary.btn-lg.mt-3(type='submit') Add Product
+        button.btn.btn-success.btn-lg.mt-3(type='submit') Add Product
 
   //- Listing all Products
   h5(class='my-4 text-center') All Products
@@ -27,5 +27,4 @@ block content
             td
               form(action='./deleteTask' method='POST' class='form-registration')
                 input(type='hidden' name='_id' value=task._id)
-                button.btn.btn-primary.btn-sm(type='submit') Remove Entry
-
+                button.btn.btn-danger.btn-sm(type='submit') Remove Entry
