@@ -33,7 +33,7 @@ const taskSchema = new mongoose.Schema({
   price: {
     type: Number,
     required: true // Assuming price is a required field
-  }
+  },
   pID: {
     type: Number,
     required: true // Assuming price is a required field

@@ -23,10 +23,18 @@ router.get('/', function(req, res, next) {
 router.post('/addTask', function(req, res, next) {
   const taskName = req.body.taskName;
   const createDate = Date.now();
+  const price = req.body.price;
+  const description = req.body.description;
+  const catagory = req.body.catagory;
+  const pID = req.body.pID;
   
   var task = new Task({
     taskName: taskName,
-    createDate: createDate
+    createDate: createDate,
+    pID: pID,
+    description: description,
+    catagory: catagory,
+    price: price
   });
   console.log(`Adding a new task ${taskName} - createDate ${createDate}`)
 
