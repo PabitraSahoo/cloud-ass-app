@@ -2,30 +2,30 @@ extends layout
 
 block content
   //- Form for Adding Products
-  form(action='./addTask', method='POST', class='form-registration')
-    div(class='row my-3')
-      div(class='col-md-2 align-bottom')
-        label(for="taskName", class='fs-5 text-primary') New Product
-      div(class='col-md-8')
-        input(class="form-control form-control-sm", type="text", name='taskName', placeholder="Enter new Product here" )
-      div(class='col-md-2 text-end')
-        button(class='btn btn-success btn-sm', type='submit') Add Product
+  form(action='./addTask' method='POST' class='form-registration')
+    .row.my-3
+      .col-md-12.text-center
+        label(for="taskName" class='fs-5 mb-2') Product Management System
+        input.form-control.form-control-lg(type="text", name='taskName', placeholder="Enter new Product here" )
+        button.btn.btn-primary.btn-lg.mt-3(type='submit') Add Product
 
   //- Listing all Products
-  h5(class='my-4 text-primary text-center') All Products
+  h5(class='my-4 text-center') All Products
 
-  div(class='container')
-    div(class='row mb-3 border-bottom border-3 text-center text-white bg-primary')
-      div(class='col-md-6 fw-bold') Product
-      div(class='col-md-3 fw-bold') Added On
-      div(class='col-md-3 fw-bold') Action
+  .table-responsive
+    table.table.table-striped.table-hover
+      thead
+        tr
+          th(class='fw-bold') Product
+          th(class='fw-bold') Added On
+          th(class='fw-bold') Actions
+      tbody
+        each task in currentTasks
+          tr
+            td #{task.taskName}
+            td #{format(task.createDate, "yyyy-MM-dd HH:mm:ss")}
+            td
+              form(action='./deleteTask' method='POST' class='form-registration')
+                input(type='hidden' name='_id' value=task._id)
+                button.btn.btn-primary.btn-sm(type='submit') Remove Entry
 
-    each task in currentTasks
-      div(class='row mb-2 border border-3 rounded p-2 bg-light')
-        div(class='col-sm-6 fw-bold') #{task.taskName}
-        div(class='col-sm-3') #{format(task.createDate, "yyyy-MM-dd HH:mm:ss")} 
-        div(class='col-sm-3')
-          //- Form for Deleting Task
-          form(action='./deleteTask', method='POST', class='form-registration')
-            input(type='hidden', name='_id', value=${task._id})
-            button(class='btn btn-danger btn-sm', type='submit') Remove
