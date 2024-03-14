@@ -7,6 +7,9 @@ block content
       .col-md-12.text-center
         label(for="taskName" class='fs-5 mb-2') Product Management System
         input.form-control.form-control-lg(type="text", name='taskName', placeholder="Enter new Product here" )
+        input.form-control.form-control-lg(type="text", name='description', placeholder="Enter Product details here" )
+        input.form-control.form-control-lg(type="text", name='price', placeholder="Enter the Product price here" )
+        input.form-control.form-control-lg(type="text", name='catagory', placeholder="Enter Product catagory here" )
         //button.btn.btn-success.btn-lg.mt-3(type='submit') Add Product
         button.btn.btn-primary.btn-lg.mt-3(type='submit') Add Product
 
@@ -18,14 +21,22 @@ block content
     table.table.table-striped.table-hover
       thead
         tr
+          th(class='fw-bold') Product ID
           th(class='fw-bold') Product
           th(class='fw-bold') Added On
+          th(class='fw-bold') Price 
+          th(class='fw-bold') Description
+          th(class='fw-bold') Catagory
           th(class='fw-bold') Actions
       tbody
         each task in currentTasks
           tr
+            td #{task.pID}
             td #{task.taskName}
             td #{format(task.createDate, "yyyy-MM-dd HH:mm:ss")}
+            td #{task.price}
+            td #{task.description}
+            td #{task.catagory}
             td
               form(action='./deleteTask' method='POST' class='form-registration')
                 input(type='hidden' name='_id' value=task._id)
