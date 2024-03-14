@@ -5,7 +5,8 @@ block content
   form(action='./addTask' method='POST' class='form-registration')
     .row.my-3
       .col-md-12.text-center
-        label(for="taskName" class='fs-5 mb-2') Product Management System
+        //label(for="taskName" class='fs-5 mb-2') Product Database
+        <label for="taskName" style="font-size: 20px;">Product Management</label>
         input.form-control.form-control-lg(type="text", name='taskName', placeholder="Enter the new Product Name here" )
         input.form-control.form-control-lg(type="text", name='pID', placeholder="Enter the Product ID here" )
         input.form-control.form-control-lg(type="text", name='description', placeholder="Enter Product details here" )
