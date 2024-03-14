@@ -14,8 +14,8 @@ const taskSchema = new mongoose.Schema({
     trim: true,
   },
   createDate: Date,
-  //completedDate: Date,
-  //completed: Boolean,
+  completedDate: Date,
+  completed: Boolean,
   price: {
     type: Number,
     required: true // Assuming price is a required field
