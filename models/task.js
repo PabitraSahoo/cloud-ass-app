@@ -17,12 +17,12 @@ const taskSchema = new mongoose.Schema({
   completedDate: Date,
   completed: Boolean,
   price: {
-    type: Number,
-    required: true // Assuming price is a required field
+    type: String,
+    trim: true,
   },
   pID: {
-    type: Number,
-    required: true // Assuming price is a required field
+    type: String,
+    trim: true,
   }
 });
 
