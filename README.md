@@ -1,6 +1,6 @@
 # Express.js/MongoDB - Azure Web app for Product Management
 
-Product Management application to demonstrate how to deploy an Node.js (Express.js) app using MongoDB to Azure.  
+Product Management application by deploying an Node.js (Express.js) app using MongoDB to Azure.  
 
 
 Architectural Diagram
